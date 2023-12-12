@@ -4,7 +4,6 @@ import { Form } from './Form/Form';
 import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
 
-
 const localstorageKey = 'local-contacts';
 const initialContacts = [
   { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
@@ -21,15 +20,13 @@ const getLocalstorage = () => {
 export const App = () => {
   const [filter, setFilter] = useState('');
   const [contacts, setContacts] = useState(getLocalstorage());
-  
 
-    useEffect(() => {
-      console.log('Write to local storeg');
-      localStorage.setItem(localstorageKey, JSON.stringify(contacts));
-    }, [contacts]);
+  useEffect(() => {
+    localStorage.setItem(localstorageKey, JSON.stringify(contacts));
+  }, [contacts]);
 
-  const handleFormSubmit = (data) => {
-      setContacts(prevContacts => [...prevContacts, data]);
+  const handleFormSubmit = data => {
+    setContacts(prevContacts => [...prevContacts, data]);
   };
 
   const filterContacts = (contacts, filter) => {
