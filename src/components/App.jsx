@@ -1,4 +1,4 @@
-import { Component, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Section, Container, PhoneBook, Title } from './App.styled';
 import { Form } from './Form/Form';
 import { ContactList } from './ContactList/ContactList';
